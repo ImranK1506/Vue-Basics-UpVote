@@ -9,5 +9,13 @@ new Vue({
                 return b.votes - a.votes
             });
         }
+    },
+    methods: {
+        upVote(submissionId) {
+            const submission = this.submissions.find(
+                submission => submission.id === submissionId
+            );
+            submission.votes++;
+        }
     }
 });
